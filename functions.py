@@ -1,5 +1,4 @@
 # Funciones del programa
-import numpy as np
 import os
 
 #Función para validar las opciones que escoja el usuario.
@@ -192,7 +191,7 @@ institución desde el {ficha[6]}.
     print("No se encontró RUT")
     
 
-def exit_program(menu):
+def exit_program():
     menu = 0
     print("Saliendo...")
     return menu
