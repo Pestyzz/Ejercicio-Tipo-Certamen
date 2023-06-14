@@ -143,3 +143,4 @@ def grabar_ficha(fichas):
         
 def buscar_ficha(fichas):
     print(fichas)
+    pass
