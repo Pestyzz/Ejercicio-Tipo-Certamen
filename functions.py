@@ -176,7 +176,7 @@ def impr_certificado(fichas):
             print("Rut no válido.")
     
     for ficha in fichas: #For para el index de la ficha
-        for indexValue, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
+        for valueIndex, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
             if value == search: #Si el valor en esa ficha es True, se imprime el certificado con los datos correspondientes al rut.
                 print(f""" 
                 CERTIICADO AFICILIACION ISAPRE VIDA Y SALUD
