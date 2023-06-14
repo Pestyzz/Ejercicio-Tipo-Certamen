@@ -151,7 +151,7 @@ def buscar_ficha(fichas):
             print("Rut no válido.")
     
     for ficha in fichas: #For para el index de la ficha
-        for indexValue, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
+        for valueIndex, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
             if value == search: #Si el valor en esa ficha es True, se muestran todos los datos de esa ficha con ese rut.
                 print("Datos de la ficha:")
                 print("RUT:", ficha[0])
