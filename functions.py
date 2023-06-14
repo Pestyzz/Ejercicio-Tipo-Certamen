@@ -164,7 +164,6 @@ def buscar_ficha(fichas):
                 return  #Terminamos la función después de encontrar la coincidencia
     print("No se encontró ficha con ese RUT")
         
-        
 def impr_certificado(fichas):
     search = input("Ingrese el RUT que desea buscar: ").upper()
     
@@ -190,7 +189,6 @@ institución desde el {ficha[6]}.
                 return  #Terminamos la función después de encontrar la coincidencia
     print("No se encontró RUT")
     
-
 def exit_program():
     menu = 0
     print("Saliendo...")
