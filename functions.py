@@ -140,3 +140,6 @@ def grabar_ficha(fichas):
         except ValueError:
             print("Caracter inválido.")
             break
+        
+def buscar_ficha(fichas):
+    print(fichas)
