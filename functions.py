@@ -140,3 +140,15 @@ def grabar_ficha(fichas):
         except ValueError:
             print("Caracter inválido.")
             break
+        
+def execute_program(fichas):
+    menu = 1
+    fichas = []
+    while menu == 1:
+        userOption = user_option("1.Grabar\n2.Buscar\n3.Imprimir certificado afiliación\n4.Salir")
+        
+        if userOption == 1:
+            while True:
+                fichas.extend(grabar_ficha(fichas))
+                print(fichas)
+                break
