@@ -9,7 +9,6 @@ while menu == 1:
     if userOption == 1:
         while True:
             fichas.extend(functions.grabar_ficha(fichas))
-            print(fichas)
             break
     elif userOption == 2:
         while True:
@@ -21,5 +20,5 @@ while menu == 1:
             break
     elif userOption == 4:
         while True:
-            menu = functions.exit_program(menu)
+            menu = functions.exit_program()
             break
