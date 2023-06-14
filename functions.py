@@ -165,18 +165,34 @@ def buscar_ficha(fichas):
                 return  #Terminamos la función después de encontrar la coincidencia
     print("No se encontró ficha con ese RUT")
         
-def execute_program(fichas):
-    menu = 1
-    fichas = []
-    while menu == 1:
-        userOption = user_option("1.Grabar\n2.Buscar\n3.Imprimir certificado afiliación\n4.Salir")
         
-        if userOption == 1:
-            while True:
-                fichas.extend(grabar_ficha(fichas))
-                print(fichas)
-                break
-        elif userOption == 2:
-            while True:
-                buscar_ficha(fichas)
-                break
+def impr_certificado(fichas):
+    search = input("Ingrese el RUT que desea buscar: ").upper()
+    
+    if len(search) != 9: #El largo del rut es un máximo de 9 caracteres.
+                print("Rut erróneo. Debe tener máximo 9 caracteres.")
+                return
+    else:           
+        if search[-1] not in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'K']: #El último valor del rut debe de ser uno de estos.
+            print("Rut no válido.")
+    
+    for ficha in fichas: #For para el index de la ficha
+        for indexValue, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
+            if value == search: #Si el valor en esa ficha es True, se muestran todos los datos de esa ficha con ese rut.
+                print(f""" 
+                CERTIICADO AFICILIACION ISAPRE VIDA Y SALUD
+                      
+{ficha[1]} {ficha[2]}, {ficha[0]}, sexo {ficha[5]}, estado civil {ficha[4]}, afiliado en esta
+institución desde el {ficha[6]}.
+
+ Se otorga este certificado de afiliación para los fines que estime convenientes.
+ 
+ Sin otro particular.""")
+                return  #Terminamos la función después de encontrar la coincidencia
+    print("No se encontró RUT")
+    
+
+def exit_program(menu):
+    menu = False
+    print("Saliendo...")
+    return menu
