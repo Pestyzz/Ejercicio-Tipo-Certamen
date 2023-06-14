@@ -141,6 +141,30 @@ def grabar_ficha(fichas):
             print("Caracter inválido.")
             break
         
+def buscar_ficha(fichas):
+    search = input("Ingrese el RUT que desea buscar: ").upper()
+    
+    if len(search) != 9: #El largo del rut es un máximo de 9 caracteres.
+                print("Rut erróneo. Debe tener máximo 9 caracteres.")
+                return
+    else:           
+        if search[-1] not in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'K']: #El último valor del rut debe de ser uno de estos.
+            print("Rut no válido.")
+    
+    for ficha in fichas: #For para el index de la ficha
+        for indexValue, value in enumerate(ficha): #For para encontrar el valor dentro de la ficha correspondiente.
+            if value == search: #Si el valor en esa ficha es True, se muestran todos los datos de esa ficha con ese rut.
+                print("Datos de la ficha:")
+                print("RUT:", ficha[0])
+                print("Nombre:", ficha[1])
+                print("Apellido:", ficha[2])
+                print("Edad:", ficha[3])
+                print("Estado Civil:", ficha[4])
+                print("Género:", ficha[5])
+                print("Fecha de Afiliación:", ficha[6])
+                return  #Terminamos la función después de encontrar la coincidencia
+    print("No se encontró ficha con ese RUT")
+        
 def execute_program(fichas):
     menu = 1
     fichas = []
@@ -151,4 +175,8 @@ def execute_program(fichas):
             while True:
                 fichas.extend(grabar_ficha(fichas))
                 print(fichas)
+                break
+        elif userOption == 2:
+            while True:
+                buscar_ficha(fichas)
                 break
