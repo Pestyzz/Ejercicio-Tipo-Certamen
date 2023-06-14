@@ -69,7 +69,7 @@ def grabar_ficha(fichas):
             elif age <= 0: #La edad debe ser mayor a cero para ser una edad válida.
                 print("Edad inválida.")
             else:
-                age = f"{age} años"
+                age = f"{age} años" #Si pasa las validaciones se le añade "años" a la edad entrante.
             #--------------------------------------------------------------------------
             #Ingresar Estado Civil
             maritalStatus = input(">Ingrese su estado civil (C = Casado, S = Soltero, V = Viudo): ")
@@ -184,13 +184,14 @@ def impr_certificado(fichas):
 {ficha[1]} {ficha[2]}, {ficha[0]}, sexo {ficha[5]}, estado civil {ficha[4]}, afiliado en esta
 institución desde el {ficha[6]}.
 
- Se otorga este certificado de afiliación para los fines que estime convenientes.
+Se otorga este certificado de afiliación para los fines que estime convenientes.
  
- Sin otro particular.""")
+Sin otro particular.
+""")
                 return  #Terminamos la función después de encontrar la coincidencia
     print("No se encontró RUT")
     
 def exit_program():
     menu = 0
-    print("Saliendo...")
+    print("Saliendo...\nBastián Ñiripil\nversión 1.2")
     return menu
