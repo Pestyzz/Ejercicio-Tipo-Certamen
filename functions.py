@@ -193,6 +193,6 @@ institución desde el {ficha[6]}.
     
 
 def exit_program(menu):
-    menu = False
+    menu = 0
     print("Saliendo...")
     return menu
