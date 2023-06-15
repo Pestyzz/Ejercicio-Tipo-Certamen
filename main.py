@@ -1,0 +1,14 @@
+import functions as func
+
+menu = 1
+fichas = []
+
+while menu == 1:
+    userOption = func.user_option()
+    
+    match userOption:
+        case 1:
+            func.grabar_ficha(fichas) #Le doy la lista para que la pueda utilizar en la función
+            print(fichas)
+        case 2:
+            func.buscar_ficha(fichas)
