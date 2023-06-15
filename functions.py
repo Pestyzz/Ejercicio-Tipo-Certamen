@@ -51,7 +51,6 @@ def user_input(fichas, message, num=False, rut=False, name=False, chr=False, gen
                     #------------------------------------------------------------------------------------------
                 elif chr == True: #Le nombré chr, ya que es solamente 1 caracter.
                     if genre == False:
-                        if value != 
                         
                         if value.upper() not in ["C", "S", "V"]:
                             print("Estado civíl no válido.")
