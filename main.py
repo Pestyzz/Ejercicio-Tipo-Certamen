@@ -1,3 +1,6 @@
+""" PROGRAMA PRINCIPAL
+En este archivo main.py las funciones del archivo functions.py serán importadas
+para utilizarlas."""
 import functions as func
 
 menu = 1
