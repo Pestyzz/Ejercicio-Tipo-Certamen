@@ -91,6 +91,7 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                         continue
                     #Para hacerlo más simple solamente se va a validar el largo
                     """ Se podría hacer así, pero es más complejo
+                    
                     """
             else:
                 value = int(input(message))
@@ -117,7 +118,7 @@ def grabar_ficha(fichas): #El argumento fichas recibe como valor la lista defini
         name = user_input("Ingrese Nombre: ", name=True)
         lastName = user_input("Ingrese Apellido Paterno:", name=True)
         age = user_input("Ingrese Edad: ", num=True)
-        maritalStat = user_input("Ingrese Estado Civil (C = Casado, S = Soltero, V = Viudo/a): ", chr=True)
+        maritalStat = user_input("Ingrese Estado Civil (C = Casado, S = Soltero, V = Viudo): ", chr=True)
         genre = user_input("Ingrese Género (H = Hombre, M = Mujer): ", genre=True, chr=True)
         afiDate = user_input("Ingrese Fecha Afiliación (dd-mm-aaaa): ", date=True)
         break
