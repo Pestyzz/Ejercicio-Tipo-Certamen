@@ -61,6 +61,7 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                         continue
                     #------------------------------------------------------------------------------------------
                 elif chr == True: #Le nombré chr, ya que es solamente 1 caracter.
+                #---------------------------------Validación EstadoCivil/Género------------------------------
                     value = value.upper()
                     if genre == False:
                         if value.isdigit():
@@ -88,7 +89,9 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                                 value = "Hombre"
                             if value == "M":
                                 value = "Mujer"
+                    #------------------------------------------------------------------------------------------
                 elif date == True:
+                    #---------------------------------Validación Fecha-------------------------------
                     if len(value) != 10:
                         print("Fecha no válida.")
                         continue
@@ -99,9 +102,10 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                     f"{day}-{month}-{year}", y de paso se le daría el formato que es
                     dd-mm-aaaa.
                     """
+                    #------------------------------------------------------------------------------------------
             else:
                 value = int(input(message))
-                #---------------------------------Validación Nombre/Apellido-------------------------------
+                #---------------------------------Validación Edad-------------------------------
                 if value < 18:
                     print("Debe ser mayor de edad.")
                     continue
