@@ -15,3 +15,7 @@ while menu == 1:
             print(fichas)
         case 2:
             func.buscar_ficha(fichas)
+        case 3:
+            func.impr_ficha(fichas)
+        case 4:
+            menu = func.salir(menu)
