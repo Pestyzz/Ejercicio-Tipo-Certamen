@@ -139,7 +139,6 @@ def grabar_ficha(fichas): #El argumento fichas recibe como valor la lista defini
     ficha = [rut, name, lastName, age, maritalStat, genre, afiDate]
     fichas.append(ficha)
 
-
 def buscar_ficha(fichas):
     system("cls")
     
@@ -162,8 +161,7 @@ Fecha de afiliación: {ficha[6]}
                 
     else:
         print("El RUT no posee una ficha.")
-        
-        
+         
 def impr_certifi(fichas):
     search = user_input("Ingrese RUT: ", search=True,rut=True)
     
