@@ -53,6 +53,8 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                 elif name == True:
                     value = value.capitalize()
                     #---------------------------------Validación Nombre/Apellido-------------------------------
+                    if value.isdigit():
+                        raise ValueError #Si se encuentra algún número en el nombre se lanza un error.
                     if len(value) <= 2:
                         print("Demasiado corto.")
                         continue
@@ -61,7 +63,7 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                     value = value.upper()
                     if genre == False:
                         if value.isdigit():
-                            raise ValueError
+                            raise ValueError #Si
                         #Si el caracter no se encuentra en la secuencia no es válido.
                         if value not in ["C", "S", "V"]:
                             print("Estado civíl no válido.")
@@ -86,12 +88,15 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                             if value == "M":
                                 value = "Mujer"
                 elif date == True:
-                    if len(value) > 10:
+                    if len(value) != 10:
                         print("Fecha no válida.")
                         continue
-                    #Para hacerlo más simple solamente se va a validar el largo
-                    """ Se podría hacer así, pero es más complejo
-                    
+                    #Para hacerlo más simple solamente se va a validar el largo de la fecha.
+                    """ Se podría hacer que el usuario ingrese 3 datos
+                    día, mes, y año, luego se validaría cada uno para que sea válido,
+                    se transformarían a string guardando en una variable los 3 datos con
+                    f"{day}-{month}-{year}", y de paso se le daría el formato que es
+                    dd-mm-aaaa.
                     """
             else:
                 value = int(input(message))
@@ -170,8 +175,7 @@ Se otorga este certificado de afiliación para los fines que estime conveniente.
 
 Sin otro particular.
 """)
-            break
-                
+            break    
     else:
         print("El RUT no posee una ficha.")
 
