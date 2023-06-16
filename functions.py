@@ -4,7 +4,7 @@ from os import system
 def user_option():
     while True:
         try:
-            print("-----ISAPRE VIDA Y SALUD----")
+            print("-----ISAPRE VIDA Y SALUD-----")
             print("1.Grabar\n2.Buscar\n3.Imprimir Certificado\n4.Salir")
             userOption = int(input("Ingrese un dígito: "))
             
@@ -53,8 +53,9 @@ def user_input(message, fichas=None, search=False, num=False, rut=False, name=Fa
                 elif name == True:
                     value = value.capitalize()
                     #---------------------------------Validación Nombre/Apellido-------------------------------
-                    if value.isdigit():
-                        raise ValueError #Si se encuentra algún número en el nombre se lanza un error.
+                    for char in value:
+                        if char.isdigit():
+                            raise ValueError #Si se encuentra algún número en el nombre se lanza un error.
                     if len(value) <= 2:
                         print("Demasiado corto.")
                         continue
@@ -121,7 +122,7 @@ def grabar_ficha(fichas): #El argumento fichas recibe como valor la lista defini
             return
         #Le mando a la función que si es un ingreso tipo rut para hacer su respectiva validación en esa función.
         name = user_input("Ingrese Nombre: ", name=True)
-        lastName = user_input("Ingrese Apellido Paterno:", name=True)
+        lastName = user_input("Ingrese Apellido Paterno: ", name=True)
         age = user_input("Ingrese Edad: ", num=True)
         maritalStat = user_input("Ingrese Estado Civil (C = Casado, S = Soltero, V = Viudo): ", chr=True)
         genre = user_input("Ingrese Género (H = Hombre, M = Mujer): ", genre=True, chr=True)
@@ -159,7 +160,7 @@ Fecha de afiliación: {ficha[6]}
         print("El RUT no posee una ficha.")
         
         
-def impr_ficha(fichas):
+def impr_certifi(fichas):
     search = user_input("Ingrese RUT: ", search=True,rut=True)
     
     for ficha in fichas:
